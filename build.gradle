@@ -23,18 +23,20 @@ allprojects {
 
 
 ext.versions = [
-        "compileSdk"  : 29,
-        "minSdk"      : 21,
-        "targetSdk"   : 29,
-        "dagger"      : "2.29.1",
-        "recyclerview": "1.1.0",
-        "truth"       : "1.1"
+        "compileSdk"            : 29,
+        "minSdk"                : 21,
+        "targetSdk"             : 29,
+        "constraintlayout"      :"2.0.4",
+        "dagger"                :"2.29.1",
+        "recyclerview"          :"1.1.0",
+        "truth"                 :"1.1"
 ]
 
 ext.deps = [
 
         "androidx": [
                 "recyclerview": "androidx.recyclerview:recyclerview:${versions.recyclerview}",
+                "constraintlayout": "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
         ],
         "dagger"  : [
                 "core"    : "com.google.dagger:dagger:${versions.dagger}",
