@@ -28,6 +28,7 @@ ext.versions = [
         "targetSdk"             : 29,
         "constraintlayout"      :"2.0.4",
         "dagger"                :"2.29.1",
+        "lifecycle"             :"2.2.0",
         "recyclerview"          :"1.1.0",
         "truth"                 :"1.1"
 ]
@@ -35,7 +36,9 @@ ext.versions = [
 ext.deps = [
 
         "androidx": [
-                "recyclerview": "androidx.recyclerview:recyclerview:${versions.recyclerview}",
+                "recyclerview"    : "androidx.recyclerview:recyclerview:${versions.recyclerview}",
+                "livedata"        :  "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
+                "viewmodel"       :  "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
                 "constraintlayout": "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
         ],
         "dagger"  : [
