@@ -31,6 +31,9 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     implementation project(":repository")
+    implementation project(":di")
+    implementation project(":appdeps")
+
 
     implementation  deps.androidx.recyclerview
     implementation  deps.androidx.constraintlayout
