@@ -2,9 +2,12 @@ package com.app.taiye.githubbrowserr.home
 
 import com.app.taiye.gtihubbrowserr.appdeps.ApplicationDeps
 import com.app.taiye.gtihubbrowserr.appdeps.applicationDeps
+import com.app.taiye.gtihubbrowserr.di.component.getComponent
+import com.app.taiye.gtihubbrowserr.di.scope.ScreenScope
 import dagger.Component
 
 
+@ScreenScope
 @Component(dependencies = [ApplicationDeps::class], modules = [HomeModule::class])
 interface HomeComponent {
 
@@ -19,7 +22,8 @@ interface HomeComponent {
 
 fun HomeFragment.inject(){
 
-    DaggerHomeComponent.factory().create(requireContext()
-         .applicationDeps())
-         .inject(this)
+    getComponent {
+        DaggerHomeComponent.factory().create(requireContext()
+            .applicationDeps())
+    }.inject(this)
 }

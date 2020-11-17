@@ -5,8 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.app.taiye.githubbrowserr.list.RepoItem
 import com.app.taiye.githubbrowserr.repository.AppRepository
+import com.app.taiye.gtihubbrowserr.di.scope.ScreenScope
 import javax.inject.Inject
 
+
+@ScreenScope
 class HomeViewModel @Inject constructor(appRepository: AppRepository):ViewModel() {
 
     private val _viewState = MutableLiveData<HomeViewState>(HomeViewStateLoading)
