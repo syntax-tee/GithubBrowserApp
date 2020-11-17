@@ -26,6 +26,7 @@ ext.versions = [
         "compileSdk"            : 29,
         "minSdk"                : 21,
         "targetSdk"             : 29,
+        "archTesting"           : "2.1.0",
         "constraintlayout"      :"2.0.4",
         "dagger"                :"2.29.1",
         "lifecycle"             :"2.2.0",
@@ -36,10 +37,11 @@ ext.versions = [
 ext.deps = [
 
         "androidx": [
-                "recyclerview"    : "androidx.recyclerview:recyclerview:${versions.recyclerview}",
+                "archTesting"     :  "androidx.arch.core:core-testing:${versions.archTesting}",
+                "constraintlayout":  "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+                "recyclerview"    :  "androidx.recyclerview:recyclerview:${versions.recyclerview}",
                 "livedata"        :  "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
-                "viewmodel"       :  "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
-                "constraintlayout": "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
+                "viewmodel"       :  "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
         ],
         "dagger"  : [
                 "core"    : "com.google.dagger:dagger:${versions.dagger}",
