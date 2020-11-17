@@ -18,14 +18,36 @@ class MockGithubApi @Inject constructor():GitHubApi {
          return  listOf(RepoApiModel(
             1L,
              "Taiye",
-             "Nice Guy",
+             "Emmanuel",
               owner = UseApiModel(1,"Taiye"),
              2,
-             34,
+             5,
              "taiye/com",
              "1/1/2020",
              "1/1/2020"
-        ))
+        ),
+             RepoApiModel(
+                 1L,
+                 "Mo",
+                 "Deborah",
+                 owner = UseApiModel(1,"Taiye"),
+                 2,
+                 4,
+                 "taiye/com",
+                 "1/1/2020",
+                 "1/1/2020"
+             )
+         ,RepoApiModel(
+                 1L,
+                 "Samuel",
+                 "Kenny",
+                 owner = UseApiModel(1,"Taiye"),
+                 2,
+                 3,
+                 "taiye/com",
+                 "1/1/2020",
+                 "1/1/2020"
+             ))
     }
 
 
