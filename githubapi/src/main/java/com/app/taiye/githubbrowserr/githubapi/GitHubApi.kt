@@ -1,5 +1,6 @@
 package com.app.taiye.githubbrowserr.githubapi
 
+import com.app.taiye.githubbrowserr.githubapi.model.ContributorApiModel
 import com.app.taiye.githubbrowserr.githubapi.model.RepoApiModel
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -21,7 +22,7 @@ interface GitHubApi {
     suspend fun getContributors(
         @Path("owner") repoOwner:String,
         @Path("name") repoName:String,
-    ):RepoApiModel
+    ):List<ContributorApiModel>
 
 
 }
