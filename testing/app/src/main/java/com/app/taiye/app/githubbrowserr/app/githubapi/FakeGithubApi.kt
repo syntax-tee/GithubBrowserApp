@@ -16,5 +16,13 @@ class FakeGithubApi @Inject constructor():GitHubApi {
         return TopSearchResult(repos)
     }
 
+    override suspend fun getRepo(repoOwner: String, repoName: String): RepoApiModel {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getContributors(repoOwner: String, repoName: String): RepoApiModel {
+        TODO("Not yet implemented")
+    }
+
 
 }
