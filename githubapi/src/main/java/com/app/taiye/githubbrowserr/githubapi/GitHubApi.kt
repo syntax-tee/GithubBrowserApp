@@ -6,16 +6,16 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 interface GitHubApi {
-    suspend   fun  getRepositories():List<RepoApiModel>
+    suspend   fun  getRepositories():TopSearchResult
 }
 
 
 @Singleton
 class MockGithubApi @Inject constructor():GitHubApi {
 
-    override suspend fun getRepositories(): List<RepoApiModel> {
+    override suspend fun getRepositories(): TopSearchResult {
 
-         return  listOf(RepoApiModel(
+         return  TopSearchResult(listOf(RepoApiModel(
             1L,
              "Taiye",
              "Emmanuel",
@@ -47,7 +47,7 @@ class MockGithubApi @Inject constructor():GitHubApi {
                  "taiye/com",
                  "1/1/2020",
                  "1/1/2020"
-             ))
+             )))
     }
 
 

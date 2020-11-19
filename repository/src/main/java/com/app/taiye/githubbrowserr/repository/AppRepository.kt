@@ -10,6 +10,6 @@ import javax.inject.Singleton
 class AppRepository @Inject constructor(private val gitHubApi: GitHubApi) {
 
     suspend fun getTopRepos():List<RepoApiModel>{
-       return gitHubApi.getRepositories()
+       return gitHubApi.getRepositories().items
     }
 }

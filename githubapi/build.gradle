@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -30,6 +31,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
     implementation deps.dagger.core
+
+
+    api deps.retrofit.core
+    implementation deps.retrofit.moshi
+
+    api deps.moshi.core
+    kapt deps.moshi.kotlin
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
