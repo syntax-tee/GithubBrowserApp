@@ -8,7 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.app.taiye.app.githubbrowserr.app.TestApplication
 import com.app.taiye.githubbrowserr.githubapi.model.RepoApiModel
-import com.app.taiye.githubbrowserr.githubapi.model.UseApiModel
+import com.app.taiye.githubbrowserr.githubapi.model.UserApiModel
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -25,10 +25,11 @@ class HomeFragmentTest {
                 1L,
                 "Home Fragment",
                 "Emmanuel",
-                owner = UseApiModel(1,"Taiye"),
-                2,
+                owner = UserApiModel(1,"Taiye"),
+                "H",
                 5,
-                "taiye/com",
+                3,
+                "1/1/2020",
                 "1/1/2020",
                 "1/1/2020"
             )

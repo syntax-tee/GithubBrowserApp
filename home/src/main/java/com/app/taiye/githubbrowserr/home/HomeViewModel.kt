@@ -25,7 +25,7 @@ class HomeViewModel @Inject constructor(val appRepository: AppRepository):ViewMo
                 repos = topRepos.map {
                     RepoItem(
                         name = it.name,
-                        description = it.description,
+                        description = it.description ?: "",
                         starsCount = it.stargazersCount,
                         forkCount = it.forksCount
                     )

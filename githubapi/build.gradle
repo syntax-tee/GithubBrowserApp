@@ -31,6 +31,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
     implementation deps.dagger.core
+    kapt deps.dagger.compiler
 
 
     api deps.retrofit.core

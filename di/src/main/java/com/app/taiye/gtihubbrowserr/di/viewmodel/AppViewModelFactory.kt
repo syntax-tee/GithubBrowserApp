@@ -12,7 +12,8 @@ class AppViewModelFactory @Inject constructor(
 
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-     return  classToViewModel[modelClass]?.get() as? T ?: throw  NullPointerException("No view model mapping for class:${modelClass.name}")
+        @Suppress("UNCHECKED_CAST")
+        return  classToViewModel[modelClass]?.get() as? T ?: throw  NullPointerException("No view model mapping for class:${modelClass.name}")
     }
 
 }

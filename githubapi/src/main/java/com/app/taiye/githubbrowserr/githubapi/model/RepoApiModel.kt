@@ -1,13 +1,19 @@
 package com.app.taiye.githubbrowserr.githubapi.model
 
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+
+@JsonClass(generateAdapter = true)
 data  class RepoApiModel(
     val id:Long,
     val name:String,
-    val description:String,
-    val owner:UseApiModel,
-    val stargazersCount :Int,
-    val forksCount: Int,
-    val contributorUrl:String,
-    val createdDate:String,
-    val updateDate:String
+    val description:String?,
+    val owner:UserApiModel,
+    val contributorUrl:String?,
+    @Json(name = "stargazers_count") val stargazersCount: Int,
+    @Json(name = "forks") val forksCount: Int,
+    @Json(name = "contributors_url") val contributorsUrl: String,
+    @Json(name = "created_at") val createdDate: String,
+    @Json(name = "updated_at") val updatedDate: String
 )
