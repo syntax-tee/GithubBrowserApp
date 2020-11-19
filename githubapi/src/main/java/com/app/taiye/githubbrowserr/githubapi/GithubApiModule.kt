@@ -11,14 +11,14 @@ import retrofit2.create
 import javax.inject.Singleton
 
 
-@Module
+@Module(includes =  [OkHttpConfigModule::class])
 object GitHubApiModule {
 
     @Provides
     @JvmStatic
     @Singleton
-    fun provideOkHttp(): Call.Factory {
-        return OkHttpClient.Builder()
+    fun provideOkHttp(configurator: OkHttpConfigurator): Call.Factory {
+        return OkHttpClient.Builder().apply { configurator.configure(this) }
             .build()
     }
 
@@ -47,4 +47,7 @@ object GitHubApiModule {
     fun provideGitHubApi(retrofit: Retrofit): GitHubApi {
         return retrofit.create()
     }
+}
+interface OkHttpConfigurator {
+    fun configure(clientBuilder: OkHttpClient.Builder)
 }
