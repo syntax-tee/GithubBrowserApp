@@ -55,9 +55,14 @@ dependencies {
     kapt deps.dagger.compiler
 
 
+    //Coroutines
+    implementation deps.coroutines.android
+
     //testing dependencies
     testImplementation 'junit:junit:4.12'
     testImplementation deps.androidx.archTesting
+    testImplementation deps.coroutines.test
+    testImplementation project(":testing:app")
     testImplementation  deps.truth
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

@@ -33,8 +33,10 @@ dependencies {
 
     implementation deps.dagger.core
     api project(":githubapi")
+    implementation deps.coroutines.android
 
     testImplementation 'junit:junit:4.12'
+    testImplementation project(":testing:app")
     testImplementation  deps.truth
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

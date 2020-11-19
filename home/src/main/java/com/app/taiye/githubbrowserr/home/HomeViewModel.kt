@@ -5,29 +5,33 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.app.taiye.githubbrowserr.list.RepoItem
 import com.app.taiye.githubbrowserr.repository.AppRepository
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 import com.app.taiye.gtihubbrowserr.di.scope.ScreenScope
 import javax.inject.Inject
 
 
 @ScreenScope
-class HomeViewModel @Inject constructor(appRepository: AppRepository):ViewModel() {
+class HomeViewModel @Inject constructor(val appRepository: AppRepository):ViewModel() {
 
     private val _viewState = MutableLiveData<HomeViewState>(HomeViewStateLoading)
 
     val viewStateUpdates:LiveData<HomeViewState> = _viewState
 
     init {
-        val topRepos = appRepository.getTopRepos()
-        _viewState.value = HomeViewStateLoaded(
-            repos = topRepos.map {
-                 RepoItem(
-                     name =  it.name,
-                     description =   it.description,
-                     starsCount =  it.stargazersCount,
-                     forkCount =   it.forksCount
-                 )
-            }
-        )
+        viewModelScope.launch {
+            val topRepos = appRepository.getTopRepos()
+            _viewState.value = HomeViewStateLoaded(
+                repos = topRepos.map {
+                    RepoItem(
+                        name = it.name,
+                        description = it.description,
+                        starsCount = it.stargazersCount,
+                        forkCount = it.forksCount
+                    )
+                }
+            )
+        }
     }
 
 

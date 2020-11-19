@@ -10,8 +10,9 @@ import javax.inject.Singleton
 class FakeGithubApi @Inject constructor():GitHubApi {
 
     var repos = listOf<RepoApiModel>()
-
-    override fun getRepositories(): List<RepoApiModel> {
+    override suspend fun getRepositories(): List<RepoApiModel> {
         return repos
     }
+
+
 }
