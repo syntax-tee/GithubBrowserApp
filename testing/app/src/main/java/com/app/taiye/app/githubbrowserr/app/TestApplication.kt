@@ -2,8 +2,8 @@ package com.app.taiye.app.githubbrowserr.app
 
 import android.app.Application
 import androidx.test.platform.app.InstrumentationRegistry
-import com.app.taiye.gtihubbrowserr.appdeps.ApplicationDeps
-import com.app.taiye.gtihubbrowserr.appdeps.HasApplicationDeps
+import com.app.taiye.githubbrowserr.appdeps.ApplicationDeps
+import com.app.taiye.githubbrowserr.appdeps.HasApplicationDeps
 
 class TestApplication: Application(), HasApplicationDeps {
 
