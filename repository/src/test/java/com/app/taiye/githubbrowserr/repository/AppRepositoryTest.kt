@@ -9,18 +9,16 @@ import org.junit.Before
 import org.junit.Test
 import kotlinx.coroutines.runBlocking
 
-
-private val fakeRepoApiModel =    RepoApiModel(
-    1L,
-    "Taiye",
-    "Nice Guy",
-    owner = UserApiModel(1,"Taiye"), "2",
-    34,
-    3,
-    "http://",
-    "1/1/2020",
-    "1/1/2020"
-
+private val fakeRepoApiModel = RepoApiModel(
+    id = 1L,
+    name = "Mock Repo",
+    description = "Mock Repo Description",
+    owner = UserApiModel(id = 1L, login = "dagger"),
+    stargazersCount = 1,
+    forksCount = 1,
+    contributorsUrl = "http://",
+    createdDate = "1/1/2020",
+    updatedDate = "1/1/2020",
 )
 
 class AppRepositoryTest {

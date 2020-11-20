@@ -18,28 +18,27 @@ import org.junit.runner.RunWith
 class HomeFragmentTest {
 
     @Before
-    fun setUp(){
+    fun setUp() {
         val githubApi = TestApplication.component.githubApi()
-        githubApi.repos = listOf(
+        githubApi.topRepos = listOf(
             RepoApiModel(
-                1L,
-                "Home Fragment",
-                "Emmanuel",
-                owner = UserApiModel(1,"Taiye"),
-                "H",
-                5,
-                3,
-                "1/1/2020",
-                "1/1/2020",
-                "1/1/2020"
+                id = 1L,
+                name = "Mock Repo",
+                description = "Mock Repo Description",
+                owner = UserApiModel(id = 1L, login = "dagger"),
+                stargazersCount = 1,
+                forksCount = 1,
+                contributorsUrl = "http://",
+                createdDate = "1/1/2020",
+                updatedDate = "1/1/2020",
             )
         )
     }
 
 
     @Test
-    fun reposDisplayed(){
-        launchFragmentInContainer <HomeFragment>()
+    fun reposDisplayed() {
+        launchFragmentInContainer<HomeFragment>()
         onView(withId(R.id.repo_name)).check(matches(withText("Home Fragment")))
     }
 }
