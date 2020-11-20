@@ -27,6 +27,10 @@ android {
 
     android.buildFeatures.viewBinding = true
 
+    kotlinOptions{
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
 }
 
 dependencies {
@@ -40,6 +44,8 @@ dependencies {
     implementation deps.androidx.livedata
     implementation deps.androidx.recyclerview
     implementation deps.androidx.viewmodel
+
+    implementation deps.coil
 
     implementation deps.dagger.core
     kapt deps.dagger.compiler
